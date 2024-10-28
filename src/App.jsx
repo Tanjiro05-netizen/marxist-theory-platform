@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, Book, FileText, Send, Globe, Star } from 'lucide-react';
+// src/App.jsx
+import React, { useState } from 'react';
+import { Menu, Book, Globe } from 'lucide-react';
+import { Link } from 'react-router-dom' ;
 
 const App = () => {
     const [activeSection, setActiveSection] = useState('home');
@@ -23,14 +25,43 @@ const App = () => {
                     ></div>
                 </div>
                 {/* Navigation */}
+                {/* Navigation */}
                 <nav className="absolute top-0 w-full bg-transparent text-white p-4 z-50">
                     <div className="container mx-auto flex justify-between items-center">
                         <div className="text-2xl font-bold tracking-wider">MARXIST.THEORY</div>
                         <div className="hidden md:flex space-x-8">
-                            <NavLink active={activeSection === 'theory'}>Revolutionary Theory</NavLink>
-                            <NavLink active={activeSection === 'analysis'}>Analysis</NavLink>
-                            <NavLink active={activeSection === 'library'}>Digital Library</NavLink>
-                            <NavLink active={activeSection === 'submit'}>Submit</NavLink>
+                            <Link
+                                to="/theory"
+                                className={`${
+                                    activeSection === 'theory' ? 'text-red-500' : 'text-white'
+                                } hover:text-red-400 transition-colors text-sm tracking-wide`}
+                            >
+                                Revolutionary Theory
+                            </Link>
+                            <Link
+                                to="/analysis"
+                                className={`${
+                                    activeSection === 'analysis' ? 'text-red-500' : 'text-white'
+                                } hover:text-red-400 transition-colors text-sm tracking-wide`}
+                            >
+                                Analysis
+                            </Link>
+                            <Link
+                                to="/library"
+                                className={`${
+                                    activeSection === 'library' ? 'text-red-500' : 'text-white'
+                                } hover:text-red-400 transition-colors text-sm tracking-wide`}
+                            >
+                                Digital Library
+                            </Link>
+                            <Link
+                                to="/submit"
+                                className={`${
+                                    activeSection === 'submit' ? 'text-red-500' : 'text-white'
+                                } hover:text-red-400 transition-colors text-sm tracking-wide`}
+                            >
+                                Submit
+                            </Link>
                         </div>
                         <div className="flex items-center space-x-4">
                             <Globe className="h-5 w-5"/>
@@ -50,10 +81,11 @@ const App = () => {
                             analysis
                         </p>
                         <div className="flex justify-center gap-4">
-                            <button
-                                className="bg-red-600 text-white px-8 py-3 rounded-full hover:bg-red-700 transition-colors">
+                            <Link
+                                to="/theory"
+                                className="bg-red-600 text-white px-8 py-3 rounded-full hover:bg-red-700 transition-colors inline-block">
                                 Explore Theory
-                            </button>
+                            </Link>
                             <button
                                 className="border border-white px-8 py-3 rounded-full hover:bg-white hover:text-red-900 transition-all">
                                 Submit Work
