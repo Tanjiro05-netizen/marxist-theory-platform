@@ -18,8 +18,7 @@ const App = () => {
                         style={{
                             background: `url('/images/hammerandsickle.png') no-repeat center center`,
                             backgroundSize: 'contain',
-                            filter: 'brightness(0.7) contrast(1.2)',
-                            mixBlendMode: 'soft-light'
+                            filter: 'brightness(0.7) contrast(1.2)', mixBlendMode: 'soft-light'
                         }}
                     ></div>
                 </div>
